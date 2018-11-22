@@ -6,11 +6,16 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_lista.*
 import kotlinx.android.synthetic.main.content_lista.*
 
+
 class ListaActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista)
+
+        fab.setOnClickListener {
+            NovoGameDialog().show(fragmentManager, "CriarJogo")
+        }
 
         val sharedPreferences = getSharedPreferences("meuapp",
                 Context.MODE_PRIVATE)
